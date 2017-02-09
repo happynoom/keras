@@ -60,7 +60,8 @@ def cosine_proximity(y_true, y_pred):
     y_pred = K.l2_normalize(y_pred, axis=-1)
     return -K.mean(y_true * y_pred, axis=-1)
 
-
+def profit_estimation(y_true, y_pred):
+    return -K.sum(y_pred * y_true)
 # Aliases.
 
 mse = MSE = mean_squared_error
@@ -69,7 +70,7 @@ mape = MAPE = mean_absolute_percentage_error
 msle = MSLE = mean_squared_logarithmic_error
 kld = KLD = kullback_leibler_divergence
 cosine = cosine_proximity
-
+pe = profit_estimation
 
 def get(identifier):
     return get_from_module(identifier, globals(), 'objective')
