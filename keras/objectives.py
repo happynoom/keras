@@ -61,7 +61,7 @@ def cosine_proximity(y_true, y_pred):
     return -K.mean(y_true * y_pred, axis=-1)
 
 def profit_estimation(y_true, y_pred):
-    return -K.sum(y_pred * y_true)
+    return -K.mean(y_pred * y_true)
 # Aliases.
 
 mse = MSE = mean_squared_error
